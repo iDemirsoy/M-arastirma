@@ -30,7 +30,7 @@
 
   <!-- 0. Hoş Geldiniz -->
   <div id="step-0" class="step active">
-    <h1>Migren Araştırmasına Hoş Geldiniz</h1>
+    <h1>Migren Araştırmasına Hoş Geldinizzzz</h1>
     <p>Merhaba, ben Dr. Demirsoy, nöroloji alanında çalışan bir araştırmacıyım.</p>
     <p>Bu proje ile migren hastalarının günlük yaşamlarını, tetikleyicilerini ve hastalık şiddetini daha iyi anlamayı amaçlıyorum. Topladığımız tüm veriler <strong>sadece bilimsel araştırma amacıyla</strong> kullanılacak ve hiçbir şekilde üçüncü kişilerle paylaşılmayacaktır.</p>
     <p>Katılım tamamen gönüllülük esasına dayalıdır ve istediğiniz zaman vazgeçebilirsiniz.</p>
@@ -197,18 +197,18 @@
 function finishSurvey() {
     saveData();
     const data = JSON.parse(localStorage.getItem('migrenSurveyData'));
-    // Kopyaladığınız Web Uygulaması URL'sini buraya yapıştırın:
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxB4BzUnX8JiQudzcR47fxQIBd0owGYiq7YHdMY0C-kWj9LGyPxA8uVVoWL6aFPjcfl/exec";
+    
+    // BURAYA KENDİ YENİ ALACAĞIN URL'Yİ YAPIŞTIRMAYI UNUTMA!
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzWQF7iVsC1ayMfUUXfiireboBbKNRQPxuzqWIUzJ4Uy2RLh6SLM6txmCx-t6MFRc7k/exec"; 
 
-    // $.post yerine JSON içeriği göndermek için daha uygun olan $.ajax kullanıldı
     $.ajax({
         url: GOOGLE_SCRIPT_URL,
         type: 'POST',
-        data: JSON.stringify(data), // Veriyi JSON metni olarak gönder
-        contentType: 'application/json; charset=utf-8', // Apps Script'in beklediği içerik türü
-        dataType: 'json', // Apps Script'ten JSON yanıtı bekle
+        // DÜZELTME: application/json yerine text/plain kullanıyoruz ki tarayıcı ön kontrol yapıp engellemesin.
+        contentType: 'text/plain; charset=utf-8', 
+        data: JSON.stringify(data),
+        dataType: 'json',
         success: function(response) {
-            // Apps Script'ten gelen yanıta göre işlem yap
             if (response && response.result === 'success') {
                 Swal.fire('Teşekkür ederiz!', 'Verileriniz başarıyla kaydedildi', 'success');
                 localStorage.removeItem('migrenSurveyData');
@@ -217,7 +217,13 @@ function finishSurvey() {
             }
         },
         error: function(xhr, status, error) {
-            Swal.fire('Hata', 'Sunucu ile iletişimde bir sorun oluştu. Lütfen Apps Script URL\'sini ve yetkilendirmeyi kontrol edin. Detay: ' + status, 'error');
+            // Apps Script bazen başarılı olsa bile redirect hatası verebilir, kontrol edelim:
+            if(xhr.status === 200 || xhr.status === 302) {
+                 Swal.fire('Teşekkür ederiz!', 'Verileriniz başarıyla kaydedildi', 'success');
+                 localStorage.removeItem('migrenSurveyData');
+            } else {
+                 Swal.fire('Hata', 'Sunucu hatası: ' + status, 'error');
+            }
         }
     });
 }
