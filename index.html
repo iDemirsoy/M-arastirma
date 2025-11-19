@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.3px Courier; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.3px Courier; -webkit-text-stroke: #000000; min-height: 16.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="tr"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Migren Araştırma Projesi&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {font-family: 'Inter', sans-serif; background:#0f172a; color:#e2e8f0; margin:0; padding:0;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.container {max-width:800px; margin:20px auto; padding:20px; background:#1e293b; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.5);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h1, h2 {color:#60a5fa; text-align:center;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>p {line-height:1.7;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.step {display:none;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.step.active {display:block;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input, select, textarea {width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none; background:#334155; color:white;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>label {display:block; margin:15px 0 5px; font-weight:500;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button {background:#60a5fa; color:white; padding:14px 30px; border:none; border-radius:8px; cursor:pointer; font-size:16px; margin:10px 5px;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button:hover {background:#3b82f6;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.progress {height:8px; background:#334155; border-radius:4px; margin:20px 0;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.progress-bar {height:100%; background:#60a5fa; width:0%; border-radius:4px; transition:width 0.4s;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.checkbox-label {display:flex; align-items:center; gap:10px; font-weight:normal;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.final-buttons {text-align:center; margin:30px 0;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="container"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Başlangıç Ekranı --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-0" class="step active"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Migren Araştırmasına Hoş Geldiniz&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Merhaba, ben [Adınız Soyadınız], nöroloji alanında çalışan bir araştırmacıyım.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Bu proje ile migren hastalarının günlük yaşamlarını, tetikleyicilerini ve hastalık şiddetini daha iyi anlamayı amaçlıyorum. Topladığımız tüm veriler &lt;strong&gt;sadece bilimsel araştırma amacıyla&lt;/strong&gt; kullanılacak ve hiçbir şekilde üçüncü kişilerle paylaşılmayacaktır.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Katılım tamamen gönüllülük esasına dayalıdır ve istediğiniz zaman vazgeçebilirsiniz.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center; margin:30px 0;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="nextStep(1)"&gt;Devam Et →&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- KVKK Onay --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-1" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Kişisel Verilerin Korunması (KVKK) Aydınlatma Metni&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Topladığımız bilgiler sadece bu araştırma kapsamında kullanılacak ve yalnızca araştırmacı ve iş birliği yaptığı akademisyenlerle paylaşılacaktır. Veriler anonimleştirilerek bilimsel makalelerde kullanılabilir.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;&lt;strong&gt;Bilgilerimin yukarıda belirtilen şekilde kullanılmasını kabul ediyor musunuz?&lt;/strong&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center; margin:40px 0;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button style="background:#ef4444;" onclick="Swal.fire('Üzgünüz','KVKK onayı olmadan devam edemezsiniz. İleride tekrar denemek isterseniz bekleriz. ❤️')"&gt;Hayır&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="nextStep(2)"&gt;Evet, kabul ediyorum&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- İlerleme Çubuğu --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="progress"&gt;&lt;div class="progress-bar" id="progress"&gt;&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 1. Demografik Bilgiler --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-2" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;1. Demografik Bilgiler&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Yaşınız&lt;/label&gt;&lt;input type="number" id="age" required&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Cinsiyet&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="gender"&gt;&lt;option value=""&gt;Seçiniz&lt;/option&gt;&lt;option&gt;Erkek&lt;/option&gt;&lt;option&gt;Kadın&lt;/option&gt;&lt;option&gt;Diğer&lt;/option&gt;&lt;option&gt;Belirtmek istemiyorum&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Eğitim seviyeniz&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="education"&gt;&lt;option value=""&gt;Seçiniz&lt;/option&gt;&lt;option&gt;İlkokul&lt;/option&gt;&lt;option&gt;Ortaokul&lt;/option&gt;&lt;option&gt;Lise&lt;/option&gt;&lt;option&gt;Üniversite&lt;/option&gt;&lt;option&gt;Yüksek Lisans/Doktora&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Çalışma durumu&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="work"&gt;&lt;option value=""&gt;Seçiniz&lt;/option&gt;&lt;option&gt;Çalışıyorum&lt;/option&gt;&lt;option&gt;Çalışmıyorum&lt;/option&gt;&lt;option&gt;Emekli&lt;/option&gt;&lt;option&gt;Öğrenci&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center;"&gt;&lt;button onclick="saveAndNext(2,3)"&gt;İleri →&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 2. Migren Taraması --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-3" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;2. Migreniniz Var mı?&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Son 3 ayda tekrarlayan şiddetli baş ağrılarınız oldu mu?&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="headache3months"&gt;&lt;option value=""&gt;Seçiniz&lt;/option&gt;&lt;option&gt;Evet&lt;/option&gt;&lt;option&gt;Hayır&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Baş ağrısı sırasında ışığa veya sese hassasiyet oluyor mu?&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="photosensitivity"&gt;&lt;option value=""&gt;Seçiniz&lt;/option&gt;&lt;option&gt;Evet&lt;/option&gt;&lt;option&gt;Hayır&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Bulantı veya kusma eşlik ediyor mu?&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="nausea"&gt;&lt;option value=""&gt;Seçiniz&lt;/option&gt;&lt;option&gt;Evet&lt;/option&gt;&lt;option&gt;Hayır&lt;/option&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center;"&gt;&lt;button onclick="saveAndNext(3,4)"&gt;İleri →&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 3. Atak Geçmişi ve Şiddeti --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-4" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;3. Migren Ataklarınızın Özellikleri&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Ayda ortalama kaç migren atağı geçiriyorsunuz?&lt;/label&gt;&lt;input type="number" id="attacksPerMonth"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Ataklarınız ortalama kaç saat sürüyor?&lt;/label&gt;&lt;input type="number" id="durationHours"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;En şiddetli ağrı seviyeniz (0-10)&lt;/label&gt;&lt;input type="number" min="0" max="10" id="painLevel"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center;"&gt;&lt;button onclick="saveAndNext(4,5)"&gt;İleri →&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 4. Tetikleyiciler ve Alışkanlıklar --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-5" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;4. Tetikleyiciler ve Yaşam Tarzı&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Aşağıdakilerden hangileri sizin migreninizi tetikliyor? (Birden fazla seçebilirsiniz)&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Stres"&gt; Stres&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Uykusuzluk"&gt; Uykusuzluk&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Çikolata"&gt; Çikolata / kafein&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Alkol"&gt; Alkol&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Parfüm"&gt; Parfüm / güçlü kokular&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Hava değişimi"&gt; Hava değişimi&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="checkbox-label"&gt;&lt;input type="checkbox" value="Adet dönemi"&gt; Adet dönemi&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Başka tetikleyiciler varsa yazınız:&lt;/label&gt;&lt;textarea id="otherTriggers"&gt;&lt;/textarea&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center;"&gt;&lt;button onclick="saveAndNext(5,6)"&gt;İleri →&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 5. MIDAS ve Devam Kararı --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-6" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;5. Son Kısım: MIDAS Ölçeği ve İletişim&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Buraya kadar teşekkür ederiz! Şimdi migreninizin günlük yaşamınıza etkisini ölçen &lt;strong&gt;MIDAS&lt;/strong&gt; ölçeğini uygulamak istiyoruz. Bu kısım biraz daha uzun (5-6 soru).&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Devam etmek istiyor musunuz?&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="final-buttons"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button style="background:#f59e0b;" onclick="continueLater()"&gt;Hayır, daha sonra devam etmek istiyorum&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button onclick="nextStep(7)"&gt;Evet, hemen devam edeyim&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- MIDAS Soruları --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="step-7" class="step"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;MIDAS Migren Engellilik Değerlendirme Ölçeği&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Son 3 ayda migren nedeniyle:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;1. İşe/okula kaç gün gidemediniz?&lt;/label&gt;&lt;input type="number" id="midas1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;2. İş/okul performansınız %50’den fazla düştüğü gün sayısı?&lt;/label&gt;&lt;input type="number" id="midas2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;3. Ev işlerini yapamadığınız gün sayısı?&lt;/label&gt;&lt;input type="number" id="midas3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;4. Ev işleri performansınız %50’den fazla düştüğü gün?&lt;/label&gt;&lt;input type="number" id="midas4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;5. Aile/sosyal aktivitelerden vazgeçtiğiniz gün sayısı?&lt;/label&gt;&lt;input type="number" id="midas5"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center;"&gt;&lt;button onclick="finishSurvey()"&gt;Anketi Tamamla ve Gönder&lt;/button&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const totalSteps = 8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let currentStep = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function nextStep(n) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>$(`.step`).removeClass('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>$(`#step-${n}`).addClass('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>currentStep = n;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>updateProgress();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function saveAndNext(current, next) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>saveData();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>nextStep(next);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function updateProgress() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const percent = (currentStep / (totalSteps-1)) * 100;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>$('#progress').css('width', percent + '%');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function saveData() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const data = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>age: $('#age').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>gender: $('#gender').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>education: $('#education').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>work: $('#work').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>headache3months: $('#headache3months').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>photosensitivity: $('#photosensitivity').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>nausea: $('#nausea').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>attacksPerMonth: $('#attacksPerMonth').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>durationHours: $('#durationHours').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>painLevel: $('#painLevel').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>triggers: Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(c=&gt;c.value),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>otherTriggers: $('#otherTriggers').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>midas1: $('#midas1').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>midas2: $('#midas2').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>midas3: $('#midas3').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>midas4: $('#midas4').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>midas5: $('#midas5').val(),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>timestamp: new Date().toISOString()</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>localStorage.setItem('migrenSurveyData', JSON.stringify(data));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function continueLater() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>Swal.fire({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>title: 'Tamam!',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text: 'Verileriniz kaydedildi. Devam etmek için bu linke tekrar tıklayın veya bize ulaşın.',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>icon: 'info',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>confirmButtonText: 'Kapat'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Burada iletişim tercihi sorusu ekleyebilirsin</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function finishSurvey() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>saveData();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const data = JSON.parse(localStorage.getItem('migrenSurveyData'));</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Google Sheets’e gönderme (Web App URL’si gerekiyor)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Aşağıdaki satırı kendi Google Apps Script Web App URL’nle değiştir</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const GOOGLE_SCRIPT_URL = "BURAYA_KENDİ_GOOGLE_APPS_SCRIPT_WEB_APP_URLİNİ_YAZ";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>$.post(GOOGLE_SCRIPT_URL, JSON.stringify(data), function(response) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Swal.fire('Teşekkür ederiz!', 'Verileriniz başarıyla kaydedildi. Katkınız çok değerli ❤️', 'success');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>localStorage.removeItem('migrenSurveyData');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}).fail(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Swal.fire('Hata', 'Bir sorun oluştu, lütfen tekrar deneyin veya bize ulaşın.', 'error');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Sayfa yüklendiğinde kaydedilmiş veri varsa yükle</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>window.onload = function() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const saved = localStorage.getItem('migrenSurveyData');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (saved) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const data = JSON.parse(saved);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Object.keys(data).forEach(key =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if ($('#'+key).length) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if ($('#'+key).is(':checkbox')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// checkbox handling</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>$('#'+key).val(data[key]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
