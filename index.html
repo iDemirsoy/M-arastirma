@@ -194,7 +194,7 @@
 
     // Google Sheets'e gönderme (Web App URL'si gerekiyor)
     // Aşağıdaki satırı kendi Google Apps Script Web App URL'nle değiştir
-    const GOOGLE_SCRIPT_URL = "BURAYA_KENDİ_GOOGLE_APPS_SCRIPT_WEB_APP_URLİNİ_YAZ";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8i9v5i4oK8z9vX8v7g7f6e5d4c3b2a1z0y9x8w7v6u5t4r3e2d1c/exec";
 
     $.post(GOOGLE_SCRIPT_URL, JSON.stringify(data), function(response) {
       Swal.fire('Teşekkür ederiz!', 'Verileriniz başarıyla kaydedildi. Katkınız çok değerli ❤️', 'success');
