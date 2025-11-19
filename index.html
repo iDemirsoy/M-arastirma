@@ -197,7 +197,7 @@
   function finishSurvey() {
     saveData();
     const data = JSON.parse(localStorage.getItem('migrenSurveyData'));
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8i9v5i4oK8z9vX8v7g7f6e5d4c3b2a1z0y9x8w7v6u5t4r3e2d1c/exec";
+    const GOOGLE_SCRIPT_URL = "https://docs.google.com/spreadsheets/d/1r_-cwS7I-1ol45-teNR3GzRZyMRVW2jg74o8Y0baNIY";
 
     $.post(GOOGLE_SCRIPT_URL, JSON.stringify(data))
       .done(() => {
