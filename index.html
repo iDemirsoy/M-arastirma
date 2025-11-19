@@ -22,7 +22,7 @@
     .progress-bar {height:100%; background:#60a5fa; width:0%; border-radius:4px; transition:width 0.4s;}
     .checkbox-label {display:flex; align-items:center; gap:12px; font-weight:normal; margin:12px 0; flex-wrap:wrap;}
     .final-buttons {text-align:center; margin:30px 0;}
-    a {color:#60a5fa; text-decoration:underline;}
+    a {color:#60a5fa; text-decoration:underline; cursor:pointer;}
   </style>
 </head>
 <body>
@@ -43,17 +43,8 @@
   <div id="step-1" class="step">
     <h2>Kişisel Verilerin Korunması</h2>
     <p>Bu araştırmada toplanan tüm verileriniz 6698 sayılı Kişisel Verilerin Korunması Kanunu’na uygun şekilde işlenecektir.</p>
-    
-    <p>
-      <strong>
-        <a href="javascript:void(0)" onclick="showKVKK()">
-          KVKK Aydınlatma Metni’ni okumak için tıklayın
-        </a>
-      </strong>
-    </p>
-
+    <p><strong><a href="javascript:void(0)" onclick="showKVKK()">KVKK Aydınlatma Metni’ni okumak için tıklayın</a></strong></p>
     <p><strong>Bilgilerimin yukarıdaki şekilde işlenmesini kabul ediyor musunuz?</strong></p>
-
     <div style="text-align:center; margin:40px 0;">
       <button style="background:#ef4444;" onclick="Swal.fire({title:'Üzgünüz',text:'KVKK onayı olmadan devam edemezsiniz. İleride tekrar denemek isterseniz bekleriz. ❤️',icon:'warning',confirmButtonText:'Tamam'})">Hayır</button>
       <button onclick="nextStep(2)">Evet, kabul ediyorum</button>
@@ -75,7 +66,6 @@
     </div>
   </div>
 
-  <!-- İlerleme Çubuğu -->
   <div class="progress"><div class="progress-bar" id="progress"></div></div>
 
   <!-- 3. Demografik -->
@@ -91,12 +81,64 @@
     <div style="text-align:center;"><button onclick="saveAndNext(3,4)">İleri →</button></div>
   </div>
 
-  <!-- 4-8. Diğer adımlar aynı (kısaltıyorum, hepsi var) -->
-  <div id="step-4" class="step"><h2>2. Migreniniz Var mı?</h2> ... (önceki mesajlardaki gibi aynı içerik) </div>
-  <div id="step-5" class="step"><h2>3. Migren Ataklarınızın Özellikleri</h2> ... </div>
-  <div id="step-6" class="step"><h2>4. Tetikleyiciler ve Yaşam Tarzı</h2> ... </div>
-  <div id="step-7" class="step"><h2>5. Son Kısım: MIDAS Ölçeği</h2> ... </div>
-  <div id="step-8" class="step"><h2>MIDAS Migren Engellilik Değerlendirme Ölçeği</h2> ... </div>
+  <!-- 4. Migren Taraması -->
+  <div id="step-4" class="step">
+    <h2>2. Migreniniz Var mı?</h2>
+    <label>Son 3 ayda tekrarlayan şiddetli baş ağrılarınız oldu mu?</label>
+    <select id="headache3months"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option></select>
+    <label>Baş ağrısı sırasında ışığa veya sese hassasiyet oluyor mu?</label>
+    <select id="photosensitivity"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option></select>
+    <label>Bulantı veya kusma eşlik ediyor mu?</label>
+    <select id="nausea"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option></select>
+    <div style="text-align:center;"><button onclick="saveAndNext(4,5)">İleri →</button></div>
+  </div>
+
+  <!-- 5. Atak Özellikleri -->
+  <div id="step-5" class="step">
+    <h2>3. Migren Ataklarınızın Özellikleri</h2>
+    <label>Ayda ortalama kaç migren atağı geçiriyorsunuz?</label><input type="number" id="attacksPerMonth">
+    <label>Ataklarınız ortalama kaç saat sürüyor?</label><input type="number" id="durationHours">
+    <label>En şiddetli ağrı seviyeniz (0-10)</label><input type="number" min="0" max="10" id="painLevel">
+    <div style="text-align:center;"><button onclick="saveAndNext(5,6)">İleri →</button></div>
+  </div>
+
+  <!-- 6. Tetikleyiciler -->
+  <div id="step-6" class="step">
+    <h2>4. Tetikleyiciler ve Yaşam Tarzı</h2>
+    <p>Aşağıdakilerden hangileri sizin migreninizi tetikliyor? (Birden fazla seçebilirsiniz)</p>
+    <label class="checkbox-label"><input type="checkbox" value="Stres"> Stres</label>
+    <label class="checkbox-label"><input type="checkbox" value="Uykusuzluk"> Uykusuzluk</label>
+    <label class="checkbox-label"><input type="checkbox" value="Çikolata"> Çikolata / kafein</label>
+    <label class="checkbox-label"><input type="checkbox" value="Alkol"> Alkol</label>
+    <label class="checkbox-label"><input type="checkbox" value="Parfüm"> Parfüm / güçlü kokular</label>
+    <label class="checkbox-label"><input type="checkbox" value="Hava değişimi"> Hava değişimi</label>
+    <label class="checkbox-label"><input type="checkbox" value="Adet dönemi"> Adet dönemi</label>
+    <label>Başka tetikleyiciler varsa yazınız:</label><textarea id="otherTriggers"></textarea>
+    <div style="text-align:center;"><button onclick="saveAndNext(6,7)">İleri →</button></div>
+  </div>
+
+  <!-- 7. MIDAS Karar -->
+  <div id="step-7" class="step">
+    <h2>5. Son Kısım: MIDAS Ölçeği</h2>
+    <p>Buraya kadar teşekkür ederiz! Şimdi migreninizin günlük yaşamınıza etkisini ölçen MIDAS ölçeğini uygulamak istiyoruz.</p>
+    <p>Devam etmek istiyor musunuz?</p>
+    <div class="final-buttons">
+      <button style="background:#f59e0b;" onclick="continueLater()">Hayır, daha sonra devam etmek istiyorum</button>
+      <button onclick="nextStep(8)">Evet, hemen devam edeyim</button>
+    </div>
+  </div>
+
+  <!-- 8. MIDAS Soruları -->
+  <div id="step-8" class="step">
+    <h2>MIDAS Migren Engellilik Değerlendirme Ölçeği</h2>
+    <p>Son 3 ayda migren nedeniyle:</p>
+    <label>1. İşe/okula kaç gün gidemediniz?</label><input type="number" id="midas1">
+    <label>2. İş/okul performansınız %50’den fazla düştüğü gün sayısı?</label><input type="number" id="midas2">
+    <label>3. Ev işlerini yapamadığınız gün sayısı?</label><input type="number" id="midas3">
+    <label>4. Ev işleri performansınız %50’den fazla düştüğü gün?</label><input type="number" id="midas4">
+    <label>5. Aile/sosyal aktivitelerden vazgeçtiğiniz gün sayısı?</label><input type="number" id="midas5">
+    <div style="text-align:center;"><button onclick="finishSurvey()">Anketi Tamamla ve Gönder</button></div>
+  </div>
 
 </div>
 
@@ -165,20 +207,19 @@
       .fail(() => Swal.fire('Hata','Bir sorun oluştu, lütfen tekrar deneyin.','error'));
   }
 
-  // KVKK Popup Fonksiyonu
   function showKVKK() {
     Swal.fire({
       title: 'Kişisel Verilerin Korunması Kanunu (KVKK) Aydınlatma Metni',
       html: `
         <div style="text-align:left; font-size:15px; line-height:1.6;">
-          <p><strong>Veri Sorumlusu:</strong> [Adınız Soyadınız] (Nöroloji Araştırmacısı)</p>
+          <p><strong>Veri Sorumlusu:</strong> Dr. Demirsoy (Nöroloji Araştırmacısı)</p>
           <p><strong>Amaç:</strong> Migren hastalığının günlük yaşama etkisini ve tetikleyicilerini bilimsel olarak incelemek.</p>
           <p><strong>Toplanan Veriler:</strong> Ad-soyad, telefon, e-posta, yaş, cinsiyet, migren atak bilgileri, MIDAS skoru vb.</p>
           <p><strong>Kullanım:</strong> Sadece bu bilimsel araştırma için kullanılacak, anonim hâle getirilerek makale/tezde yer alabilir.</p>
           <p><strong>Paylaşım:</strong> Üçüncü kişilerle paylaşılmayacaktır.</p>
           <p><strong>Saklama Süresi:</strong> Araştırma bitiminden itibaren 5 yıl.</p>
           <p><strong>Haklarınız:</strong> Verilerinize erişme, düzeltme, silme hakkınız vardır.</p>
-          <p><strong>İletişim:</strong> Sorularınız için: <u>ornek@mail.com</u></p>
+          <p><strong>İletişim:</strong> Sorularınız için: <u>demirsoy@demirsoy.com</u></p>
         </div>
       `,
       width: '90%',
