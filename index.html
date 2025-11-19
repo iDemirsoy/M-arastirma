@@ -27,7 +27,7 @@
 <body>
 <div class="container">
 
-  <!-- 0. Hoş Geldiniz + Proje Tanıtımı -->
+  <!-- 0. Hoş Geldiniz -->
   <div id="step-0" class="step active">
     <h1>Migren Araştırmasına Hoş Geldiniz</h1>
     <p>Merhaba, ben [Adınız Soyadınız], nöroloji alanında çalışan bir araştırmacıyım.</p>
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <!-- 2. İletişim Bilgileri (KVKK’dan sonra) -->
+  <!-- 2. İletişim Bilgileri (KVKK sonrası) -->
   <div id="step-2" class="step">
     <h2>İletişim Bilgileriniz</h2>
     <p>Araştırma sonuçlarını ve ileride yapacağımız çalışmaları sizinle paylaşabilmek için lütfen aşağıdaki bilgileri giriniz.</p>
@@ -67,7 +67,7 @@
   <!-- İlerleme Çubuğu -->
   <div class="progress"><div class="progress-bar" id="progress"></div></div>
 
-  <!-- 3. Demografik Bilgiler (step-3 oldu) -->
+  <!-- 3. Demografik -->
   <div id="step-3" class="step">
     <h2>1. Demografik Bilgiler</h2>
     <label>Yaşınız</label><input type="number" id="age" required>
@@ -80,22 +80,82 @@
     <div style="text-align:center;"><button onclick="saveAndNext(3,4)">İleri →</button></div>
   </div>
 
-  <!-- Diğer adımlar (4-8) aynı kalıyor, sadece id numaraları 1'er arttı -->
-  <div id="step-4" class="step"><h2>2. Migreniniz Var mı?</h2><!-- aynı içerik --></div>
-  <div id="step-5" class="step"><h2>3. Migren Ataklarınızın Özellikleri</h2><!-- aynı --></div>
-  <div id="step-6" class="step"><h2>4. Tetikleyiciler ve Yaşam Tarzı</h2><!-- aynı --></div>
-  <div id="step-7" class="step"><h2>5. Son Kısım: MIDAS Ölçeği</h2><!-- aynı --></div>
-  <div id="step-8" class="step"><h2>MIDAS Migren Engellilik Değerlendirme Ölçeği</h2><!-- aynı --></div>
+  <!-- 4. Migren Taraması -->
+  <div id="step-4" class="step">
+    <h2>2. Migreniniz Var mı?</h2>
+    <label>Son 3 ayda tekrarlayan şiddetli baş ağrılarınız oldu mu?</label>
+    <select id="headache3months"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option></select>
+    <label>Baş ağrısı sırasında ışığa veya sese hassasiyet oluyor mu?</label>
+    <select id="photosensitivity"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option></select>
+    <label>Bulantı veya kusma eşlik ediyor mu?</label>
+    <select id="nausea"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option></select>
+    <div style="text-align:center;"><button onclick="saveAndNext(4,5)">İleri →</button></div>
+  </div>
+
+  <!-- 5. Atak Özellikleri -->
+  <div id="step-5" class="step">
+    <h2>3. Migren Ataklarınızın Özellikleri</h2>
+    <label>Ayda ortalama kaç migren atağı geçiriyorsunuz?</label><input type="number" id="attacksPerMonth">
+    <label>Ataklarınız ortalama kaç saat sürüyor?</label><input type="number" id="durationHours">
+    <label>En şiddetli ağrı seviyeniz (0-10)</label><input type="number" min="0" max="10" id="painLevel">
+    <div style="text-align:center;"><button onclick="saveAndNext(5,6)">İleri →</button></div>
+  </div>
+
+  <!-- 6. Tetikleyiciler -->
+  <div id="step-6" class="step">
+    <h2>4. Tetikleyiciler ve Yaşam Tarzı</h2>
+    <p>Aşağıdakilerden hangileri sizin migreninizi tetikliyor? (Birden fazla seçebilirsiniz)</p>
+    <label class="checkbox-label"><input type="checkbox" value="Stres"> Stres</label>
+    <label class="checkbox-label"><input type="checkbox" value="Uykusuzluk"> Uykusuzluk</label>
+    <label class="checkbox-label"><input type="checkbox" value="Çikolata"> Çikolata / kafein</label>
+    <label class="checkbox-label"><input type="checkbox" value="Alkol"> Alkol</label>
+    <label class="checkbox-label"><input type="checkbox" value="Parfüm"> Parfüm / güçlü kokular</label>
+    <label class="checkbox-label"><input type="checkbox" value="Hava değişimi"> Hava değişimi</label>
+    <label class="checkbox-label"><input type="checkbox" value="Adet dönemi"> Adet dönemi</label>
+    <label>Başka tetikleyiciler varsa yazınız:</label><textarea id="otherTriggers"></textarea>
+    <div style="text-align:center;"><button onclick="saveAndNext(6,7)">İleri →</button></div>
+  </div>
+
+  <!-- 7. MIDAS Devam Kararı -->
+  <div id="step-7" class="step">
+    <h2>5. Son Kısım: MIDAS Ölçeği</h2>
+    <p>Buraya kadar teşekkür ederiz! Şimdi MIDAS ölçeğini uygulamak istiyoruz.</p>
+    <p>Devam etmek istiyor musunuz?</p>
+    <div class="final-buttons">
+      <button style="background:#f59e0b;" onclick="continueLater()">Hayır, daha sonra</button>
+      <button onclick="nextStep(8)">Evet, devam edeyim</button>
+    </div>
+  </div>
+
+  <!-- 8. MIDAS Soruları -->
+  <div id="step-8" class="step">
+    <h2>MIDAS Migren Engellilik Değerlendirme Ölçeği</h2>
+    <p>Son 3 ayda migren nedeniyle:</p>
+    <label>1. İşe/okula kaç gün gidemediniz?</label><input type="number" id="midas1">
+    <label>2. İş/okul performansınız %50’den fazla düştüğü gün?</label><input type="number" id="midas2">
+    <label>3. Ev işlerini yapamadığınız gün sayısı?</label><input type="number" id="midas3">
+    <label>4. Ev işleri performansınız %50’den fazla düştüğü gün?</label><input type="number" id="midas4">
+    <label>5. Aile/sosyal aktivitelerden vazgeçtiğiniz gün?</label><input type="number" id="midas5">
+    <div style="text-align:center;"><button onclick="finishSurvey()">Anketi Tamamla ve Gönder</button></div>
+  </div>
 
 </div>
 
 <script>
-  const totalSteps = 9; // 1 adım eklendi
+  const totalSteps = 9;  // 9 adım oldu
   let currentStep = 0;
 
   function nextStep(n) {
-    { ... } // aynı
-  function saveAndNext(current, next) { saveData(); nextStep(next); }
+    $('.step').removeClass('active');
+    $('#step-'+n).addClass('active');
+    currentStep = n;
+    updateProgress();
+  }
+
+  function saveAndNext(current, next) {
+    saveData();
+    nextStep(next);
+  }
 
   function updateProgress() {
     const percent = (currentStep / (totalSteps-1)) * 100;
@@ -108,15 +168,61 @@
       phone: $('#phone').val(),
       email: $('#email').val(),
       age: $('#age').val(),
-      // ... diğer tüm alanlar aynı
+      gender: $('#gender').val(),
+      education: $('#education').val(),
+      work: $('#work').val(),
+      headache3months: $('#headache3months').val(),
+      photosensitivity: $('#photosensitivity').val(),
+      nausea: $('#nausea').val(),
+      attacksPerMonth: $('#attacksPerMonth').val(),
+      durationHours: $('#durationHours').val(),
+      painLevel: $('#painLevel').val(),
+      triggers: Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(c=>c.value),
+      otherTriggers: $('#otherTriggers').val(),
+      midas1: $('#midas1').val(),
+      midas2: $('#midas2').val(),
+      midas3: $('#midas3').val(),
+      midas4: $('#midas4').val(),
+      midas5: $('#midas5').val(),
       timestamp: new Date().toISOString()
     };
     localStorage.setItem('migrenSurveyData', JSON.stringify(data));
   }
 
-  // finishSurvey ve diğer fonksiyonlar aynı kalıyor
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8i9v5i4oK8z9vX8v7g7f6e5d4c3b2a1z0y9x8w7v6u5t4r3e2d1c/exec";
-  // geri kalan script aynı
+  function continueLater() {
+    Swal.fire({title:'Tamam!',text:'Verileriniz kaydedildi. Tekrar geldiğinizde devam edebilirsiniz.',icon:'info'});
+  }
+
+  function finishSurvey() {
+    saveData();
+    const data = JSON.parse(localStorage.getItem('migrenSurveyData'));
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8i9v5i4oK8z9vX8v7g7f6e5d4c3b2a1z0y9x8w7v6u5t4r3e2d1c/exec";
+
+    $.post(GOOGLE_SCRIPT_URL, JSON.stringify(data))
+      .done(() => {
+        Swal.fire('Teşekkür ederiz!','Verileriniz başarıyla kaydedildi ❤️','success');
+        localStorage.removeItem('migrenSurveyData');
+      })
+      .fail(() => Swal.fire('Hata','Bir sorun oluştu, lütfen tekrar deneyin.','error'));
+  }
+
+  // Sayfa yüklendiğinde eski verileri yükle
+  window.onload = function() {
+    const saved = localStorage.getItem('migrenSurveyData');
+    if (saved) {
+      const data = JSON.parse(saved);
+      Object.keys(data).forEach(key => {
+        const el = $('#'+key);
+        if (el.length) {
+          if (el.is(':checkbox')) {
+            if (data[key] && data[key].includes(el.val())) el.prop('checked', true);
+          } else {
+            el.val(data[key]);
+          }
+        }
+      });
+    }
+  }
 </script>
 </body>
 </html>
