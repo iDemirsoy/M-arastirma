@@ -194,18 +194,33 @@
     Swal.fire({title:'Tamam!',text:'Verileriniz kaydedildi. Tekrar geldiğinizde devam edebilirsiniz.',icon:'info',confirmButtonText:'Kapat'});
   }
 
-  function finishSurvey() {
+function finishSurvey() {
     saveData();
     const data = JSON.parse(localStorage.getItem('migrenSurveyData'));
-    const GOOGLE_SCRIPT_URL = "https://docs.google.com/spreadsheets/d/1r_-cwS7I-1ol45-teNR3GzRZyMRVW2jg74o8Y0baNIY";
+    // Kopyaladığınız Web Uygulaması URL'sini buraya yapıştırın:
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybJgFvOlv8c6zHXVC63A4Lb9Lx1pr89TR5cRzfFAnu32ISyJylaJ2hUlNfRk9W8_e9/exec"; 
 
-    $.post(GOOGLE_SCRIPT_URL, JSON.stringify(data))
-      .done(() => {
-        Swal.fire('Teşekkür ederiz!','Verileriniz başarıyla kaydedildi ❤️','success');
-        localStorage.removeItem('migrenSurveyData');
-      })
-      .fail(() => Swal.fire('Hata','Bir sorun oluştu, lütfen tekrar deneyin.','error'));
-  }
+    // $.post yerine JSON içeriği göndermek için daha uygun olan $.ajax kullanıldı
+    $.ajax({
+        url: GOOGLE_SCRIPT_URL,
+        type: 'POST',
+        data: JSON.stringify(data), // Veriyi JSON metni olarak gönder
+        contentType: 'application/json; charset=utf-8', // Apps Script'in beklediği içerik türü
+        dataType: 'json', // Apps Script'ten JSON yanıtı bekle
+        success: function(response) {
+            // Apps Script'ten gelen yanıta göre işlem yap
+            if (response && response.result === 'success') {
+                Swal.fire('Teşekkür ederiz!', 'Verileriniz başarıyla kaydedildi', 'success');
+                localStorage.removeItem('migrenSurveyData');
+            } else {
+                Swal.fire('Hata', 'Bir sorun oluştu: ' + (response ? response.message : 'Bilinmeyen Hata'), 'error');
+            }
+        },
+        error: function(xhr, status, error) {
+            Swal.fire('Hata', 'Sunucu ile iletişimde bir sorun oluştu. Lütfen Apps Script URL\'sini ve yetkilendirmeyi kontrol edin. Detay: ' + status, 'error');
+        }
+    });
+}
 
   function showKVKK() {
     Swal.fire({
